@@ -20,13 +20,14 @@ final passwordController = TextEditingController();
 final confirmpasswordController = TextEditingController();
 
 class SignUpScreen extends StatefulWidget {
-  SignUpScreen({Key? key}) : super(key: key);
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
 
 }
 class _SignUpScreenState extends State<SignUpScreen>{
+
 
 
 
@@ -113,7 +114,9 @@ class _SignUpScreenState extends State<SignUpScreen>{
                                     passwordController: passwordController),
                                 RoundedConfirmPasswordField(
                                     confirmpasswordController: confirmpasswordController),
-                                RoundedButton(text: 'REGISTER', press: () {}),
+                                RoundedButton(text: 'REGISTER', press: () {
+                                  doFirebasesignup(context) ;
+                                }),
                                 const SizedBox(
                                   height: 10,
                                 ),
